@@ -1,0 +1,17 @@
+@use "sass:color"; // Nạp module color của Sass
+@use "../abstracts/variables" as *;
+
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 25px;
+  background-color: $primary-color;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    // Thay darken(...) bằng color.adjust(..., $lightness: -10%)
+    background-color: color.adjust($primary-color, $lightness: -10%);
+  }
+}
